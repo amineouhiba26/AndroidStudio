@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="#F3F4F6">
+
+    <!-- Logo -->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/nik" />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Shop easy"
+        android:textColor="#1E3A8A"
+    android:textSize="24sp"
+    android:textStyle="bold" />
+
+    <!-- Name Field -->
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name"
+        android:backgroundTint="#3B82F6"
+    android:layout_marginTop="20dp"
+    android:textColor="#000000"
+    android:textColorHint="#6B7280" />
+
+    <!-- Email Field -->
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Address"
+        android:backgroundTint="#3B82F6"
+    android:layout_marginTop="20dp"
+    android:textColor="#000000"
+    android:textColorHint="#6B7280" />
+
+    <!-- Password Field -->
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:backgroundTint="#3B82F6"
+    android:layout_marginTop="10dp"
+    android:textColor="#000000"
+    android:textColorHint="#6B7280" />
+
+    <!-- Signup Button -->
+
+    <!-- Already a Member -->
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#1E3A8A"
+        android:text="Signup"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/loginTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already a member? Login"
+        android:textColor="#3B82F6"
+    android:layout_marginTop="10dp"/>
+</LinearLayout>

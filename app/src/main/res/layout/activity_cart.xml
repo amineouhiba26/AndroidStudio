@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Cart Header -->
+    <TextView
+        android:id="@+id/cartHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Shopping Cart"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#474A59"
+        android:padding="16dp"
+        android:gravity="center" />
+
+    <!-- Cart Items List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <!-- New Buttons (Home and Product List) just above Checkout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:padding="16dp">
+
+        <!-- Home Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"
+            app:cornerRadius="8dp"
+            android:layout_marginEnd="8dp" /> <!-- Margin between buttons -->
+
+        <!-- Product List Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/productListButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Product List"
+            android:backgroundTint="#2196F3"
+            android:textColor="@android:color/white"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+
+    <!-- Total and Checkout Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <!-- Total Price -->
+        <TextView
+            android:id="@+id/totalPriceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="Total: $0.00"
+            android:textColor="#474A59"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Checkout Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/checkoutButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF4081"
+            android:text="Checkout"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            android:paddingHorizontal="20dp" />
+    </LinearLayout>
+</LinearLayout>

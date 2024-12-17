@@ -1,0 +1,39 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ProjetAndroid"
+        tools:targetApi="31">
+
+        <!-- LoginActivity is the MAIN entry activity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- BaseActivity will be navigated to after login -->
+        <activity android:name=".BaseActivity"
+            android:launchMode="standard"/>
+
+        <!-- Other activities -->
+        <activity android:name=".MainActivity" /> <!-- Ensure this line is present -->
+        <activity android:name=".CartActivity" />
+        <activity android:name=".ProductActivity" />
+        <activity android:name=".ProductListActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".CheckoutActivity" />
+        <activity android:name=".ThankYouActivity" />
+
+    </application>
+</manifest>

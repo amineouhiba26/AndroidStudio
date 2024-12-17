@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- SearchView for product name search -->
+
+    <!-- Product List Title -->
+
+    <!-- RecyclerView for Product List -->
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:queryHint="Search products" />
+
+    <TextView
+        android:id="@+id/productListTitle"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Product List"
+        android:textColor="#474A59"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        android:background="@color/white"
+        android:elevation="4dp" />
+
+    <!-- View Cart Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/viewCartButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Cart"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="@android:color/white"
+        app:cornerRadius="8dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Home Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/homeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="@android:color/white"
+        app:cornerRadius="8dp"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

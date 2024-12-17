@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/gradient_background">
+
+    <!-- Banner Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bannerCard"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="16dp">
+
+        <ImageView
+            android:id="@+id/bannerImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Banner Image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/welcome" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Welcome Text -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bannerCard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Welcome to ShopEasy"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-medium" />
+
+    <!-- Start Shopping Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/startShoppingButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeText"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Start Shopping"
+        android:textColor="@android:color/white"
+        app:cornerRadius="8dp" />
+
+    <!-- Horizontal Layout for Sign Out and View Cart Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startShoppingButton"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <!-- Sign Out Button (Red) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signOutButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:text="Sign Out"
+            android:textColor="@android:color/white"
+            app:cornerRadius="8dp" />
+
+        <!-- View Cart Button (Blue) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewCartButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="View Cart"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_cart"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp" />
+    </LinearLayout>
+
+    <!-- RecyclerView for Product List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/signOutButton"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        android:background="@color/white"
+        android:elevation="4dp"/>
+
+</RelativeLayout>

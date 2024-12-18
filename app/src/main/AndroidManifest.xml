@@ -30,10 +30,11 @@
         <activity android:name=".MainActivity" /> <!-- Ensure this line is present -->
         <activity android:name=".CartActivity" />
         <activity android:name=".ProductActivity" />
-        <activity android:name=".ProductListActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".CheckoutActivity" />
         <activity android:name=".ThankYouActivity" />
+        <activity android:name=".FavoritesActivity" />
+
 
     </application>
 </manifest>

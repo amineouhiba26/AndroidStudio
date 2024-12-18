@@ -9,6 +9,7 @@
         <color name="secondary_color">#03A9F4</color>
         <color name="background_color">#F5F5F5</color>
         <color name="accent_color">#FF4081</color>
+    <color name="red"> #FF0000</color>
 
 
 

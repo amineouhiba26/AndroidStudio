@@ -16,10 +16,8 @@ public class ThankYouActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thank_you);
 
-        // Initialize button
         backToHomeButton = findViewById(R.id.backToHomeButton);
 
-        // Set click listener to navigate back to the main activity or home screen
         backToHomeButton.setOnClickListener(v -> {
             Intent intent = new Intent(ThankYouActivity.this, MainActivity.class); // Assuming MainActivity is your home activity
             startActivity(intent);

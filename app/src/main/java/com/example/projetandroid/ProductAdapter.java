@@ -39,18 +39,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.productPrice.setText(String.format("$%.2f", product.getPrice()));
         holder.productImage.setImageResource(product.getImageResourceId());
 
-        // Populate the Spinner with quantity options (1 to 10)
         Integer[] quantities = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         ArrayAdapter<Integer> adapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, quantities);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         holder.quantitySpinner.setAdapter(adapter);
 
-        // Handle "Add to Cart" button click
         holder.addToCartButton.setOnClickListener(v -> {
-            int quantity = (int) holder.quantitySpinner.getSelectedItem(); // Get selected quantity
-            product.setQuantity(quantity); // Save quantity in product object
-            CartManager.getInstance().addToCart(product); // Add product to cart
+            int quantity = (int) holder.quantitySpinner.getSelectedItem();
+            product.setQuantity(quantity);
+            CartManager.getInstance().addToCart(product);
             Toast.makeText(context, product.getName() + " (" + quantity + "x) added to cart", Toast.LENGTH_SHORT).show();
+        });
+
+        holder.addToFavoritesButton.setOnClickListener(v -> {
+            FavoriteManager.getInstance().addToFavorites(product); // Add product to favorites
+            Toast.makeText(context, product.getName() + " added to favorites", Toast.LENGTH_SHORT).show();
         });
     }
 
@@ -59,10 +62,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return productList.size();
     }
 
-    // Method to update the product list when filtering/searching
     public void updateProductList(List<Product> newProductList) {
         this.productList = newProductList;
-        notifyDataSetChanged(); // Notify the adapter of the changes
+        notifyDataSetChanged();
     }
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
@@ -70,7 +72,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         TextView productName, productPrice;
         ImageView productImage;
         Spinner quantitySpinner;
-        Button addToCartButton;
+        Button addToCartButton, addToFavoritesButton;
 
         public ProductViewHolder(View itemView) {
             super(itemView);
@@ -79,6 +81,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             productImage = itemView.findViewById(R.id.productImage);
             quantitySpinner = itemView.findViewById(R.id.quantitySpinner);
             addToCartButton = itemView.findViewById(R.id.addToCartButton);
+            addToFavoritesButton = itemView.findViewById(R.id.addToFavoritesButton);
         }
     }
 }

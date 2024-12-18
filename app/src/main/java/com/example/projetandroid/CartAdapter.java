@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +15,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     private Context context;
     private List<Product> cartList;
+
+
 
     public CartAdapter(Context context, List<Product> cartList) {
         this.context = context;
@@ -36,6 +39,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         holder.productPrice.setText(String.format("$%.2f", product.getPrice()));
         holder.productQuantity.setText("Qty: " + product.getQuantity());
         holder.productTotal.setText(String.format("Total: $%.2f", product.getPrice() * product.getQuantity()));
+        holder.deleteButton.setOnClickListener(v -> {
+            // Remove the item from the list
+            cartList.remove(position);
+            // Notify the adapter about the removed item
+            notifyItemRemoved(position);
+            notifyItemRangeChanged(position, cartList.size());
+        });
+
     }
 
     @Override
@@ -46,6 +57,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView productImage;
         TextView productName, productPrice, productQuantity, productTotal;
+        Button deleteButton; // Add Delete button reference
+
+
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -54,6 +68,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             productPrice = itemView.findViewById(R.id.cartProductPrice);
             productQuantity = itemView.findViewById(R.id.cartProductQuantity);
             productTotal = itemView.findViewById(R.id.cartProductTotal);
+            deleteButton = itemView.findViewById(R.id.deleteButton);
+
         }
     }
 }

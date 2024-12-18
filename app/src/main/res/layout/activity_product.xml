@@ -1,62 +1,131 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="#F5F5F5"
     android:padding="16dp">
 
-    <!-- SearchView for product name search -->
+    <!-- Search and Filter Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="12dp">
+
+        <!-- Search Label -->
+        <TextView
+            android:id="@+id/searchLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:paddingEnd="8dp"
+            android:textSize="16sp"
+            android:textColor="#474A59"
+            android:gravity="center_vertical" />
+
+        <!-- SearchView -->
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:queryHint="Search products"
+            android:iconifiedByDefault="false"
+            android:paddingEnd="8dp" />
+
+        <!-- Filter Label -->
+        <TextView
+            android:id="@+id/filterLabel"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:text="Filter by Category"
+            android:textColor="#474A59"
+            android:textSize="16sp" />
+
+        <!-- Filter Spinner -->
+        <Spinner
+            android:id="@+id/filterSpinner"
+            android:layout_width="0dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#E0E0E0"
+            android:paddingStart="8dp" />
+    </LinearLayout>
 
     <!-- Product List Title -->
-
-    <!-- RecyclerView for Product List -->
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:queryHint="Search products" />
-
     <TextView
         android:id="@+id/productListTitle"
-        android:layout_width="268dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:text="Product List"
         android:textColor="#474A59"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
 
+    <!-- RecyclerView for Product List -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:clipToPadding="false"
-        android:paddingBottom="16dp"
-        android:background="@color/white"
-        android:elevation="4dp" />
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp" />
 
-    <!-- View Cart Button -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/viewCartButton"
+    <!-- Buttons Section -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Cart"
-        android:backgroundTint="@color/colorAccent"
-        android:textColor="@android:color/white"
-        app:cornerRadius="8dp"
-        android:layout_marginTop="16dp" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
 
-    <!-- Home Button -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/homeButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:backgroundTint="@color/colorAccent"
-        android:textColor="@android:color/white"
-        app:cornerRadius="8dp"
-        android:layout_marginTop="16dp" />
+        <!-- View Cart Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewCartButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Cart"
+            android:backgroundTint="#FF5722"
+            android:textColor="@android:color/white"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Home Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/homeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="8dp" />
+        <Button
+            android:id="@+id/viewFavoritesButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="View Favorites Items"
+            android:backgroundTint="#FF4081"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:elevation="4dp" />
+    </LinearLayout>
+
 </LinearLayout>
